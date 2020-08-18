@@ -1,6 +1,8 @@
 import sys
 import os
 import requests as r
+import dateutil.parser
+from millify import millify
 
 libdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'lib')
 picdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'pic')
@@ -38,6 +40,9 @@ def get_ticker(symbol):
 
     for item in result:
         if item.get('instrument_code') == symbol:
+            item['time'] = dateutil.parser.parse(item.get('time'))
+            item['quote_volume'] = int(float(item.get('quote_volume')))
+
             return item
 
 
@@ -45,14 +50,13 @@ try:
     result = get_ticker('BTC_EUR')
     logging.info(result)
 
-    print(os.path.join(picdir, 'Font.ttc'))
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
     epd = epd2in7.EPD()
     epd.init()
-    epd.Clear(0xFF)
+    # epd.Clear(0xFF)
 
     base = 40
     logging.info("1.Drawing on the Horizontal image...")
@@ -60,9 +64,9 @@ try:
     draw = ImageDraw.Draw(Himage)
     draw.text((10, 0), 'Last ' + result.get('last_price') + '€', font=font35, fill=0)
     draw.text((10, base), 'H ' + result.get('high') + '€ / ' + 'L ' + result.get('low') + '€', font=font18, fill=0)
-    draw.text((10, base + 22), '24h:' + result.get('price_change_percentage') + '%', font=font35, fill=0)
-    draw.text((10, base + 22 + 22 + 22), 'Volume ' + result.get('quote_volume') + ' €', font=font18, fill=0)
-    draw.text((10, 150), result.get('time'), font=font18, fill=0)
+    draw.text((10, base + 22), '24h: ' + result.get('price_change_percentage') + '%', font=font35, fill=0)
+    draw.text((10, base + 22 + 22 + 22), 'Volume ' + millify(result.get('quote_volume'), precision=3) + '€', font=font18, fill=0)
+    draw.text((10, 140), result.get('time').astimezone().strftime('%H:%M'), font=font35, fill=0)
     epd.display(epd.getbuffer(Himage))
 
 

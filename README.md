@@ -1,7 +1,7 @@
 # Bitcoin Price on E-Paper
 ![Example Image](/pic/20200818_174441.jpg)
 
-##About 
+## About 
 Display BTC Price Information from Bitpanda on a RaspberryPI
 
 
