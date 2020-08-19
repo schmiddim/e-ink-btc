@@ -10,8 +10,8 @@ Display BTC Price Information from Bitpanda on a RaspberryPI
 2. [e-Paper Display](https://amzn.to/3aA24IZ)
 
 ## Sources
-https://github.com/waveshare/e-Paper
-https://www.waveshare.com/wiki/2.7inch_e-Paper_HAT_(B)
+- https://github.com/waveshare/e-Paper
+- https://www.waveshare.com/wiki/2.7inch_e-Paper_HAT_(B)
 
 ## Installation
 1. You need a Raspberry PI with an actual Version of Raspbian

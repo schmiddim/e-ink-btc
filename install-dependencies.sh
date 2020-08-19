@@ -17,4 +17,4 @@ echo Install Python system packages
 sudo apt-get install -y python3-pip  python3-pil  python3-numpy screen;
 
 echo Install pip dependencies
-pip3 install RPi.GPIO spidev python-dateutil millify
+pip3 install -r requirements.txt
