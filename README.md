@@ -24,3 +24,11 @@ Crontab
 ```
 */5 * * * * python3 /home/pi/e-ink-btc/display.py
 ```
+
+Button Support (very slow at the moment)
+```
+screen -S e-ink-btc-buttons python3 key-watcher.py
+
+```
+
+

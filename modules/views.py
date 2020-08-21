@@ -3,8 +3,9 @@ import os
 import requests as r
 import dateutil.parser
 from millify import millify
+import logging
+from PIL import Image, ImageDraw, ImageFont
 
-print(os.path.realpath(__file__))
 picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 
@@ -15,9 +16,8 @@ if os.path.exists(libdir):
     sys.path.append(libdir)
 else:
     raise Exception("libdir {} not found".format(libdir))
-import logging
+
 from waveshare_epd import epd2in7
-from PIL import Image, ImageDraw, ImageFont
 
 logging.basicConfig(level=logging.DEBUG)
 
