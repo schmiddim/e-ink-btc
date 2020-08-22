@@ -1,0 +1,8 @@
+{
+  "keyMappings": {
+    "key1": "BTC_EUR",
+    "key2": "ETH_EUR",
+    "key3": "LINK_EUR",
+    "key4": "MIOTA_EUR"
+  }
+}
