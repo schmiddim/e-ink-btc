@@ -2,3 +2,4 @@ millify==0.1.1
 python-dateutil==2.8.1
 RPi.GPIO==0.7.0
 spidev==3.5
+Pillow

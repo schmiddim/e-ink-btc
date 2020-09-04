@@ -17,7 +17,8 @@ Display BTC Price Information from Bitpanda on a RaspberryPI
 1. You need a Raspberry PI with an actual Version of Raspbian
 2. Follow the Instructions in the [Waveshare Wiki](https://www.waveshare.com/wiki/2.7inch_e-Paper_HAT_(B)) or run **install-dependencies.sh**
 3. Clone the Repo in your homedir
-4. Execute the display.py script
+4. [Configure SPI](https://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/)
+5. Execute the display.py script
 
 ## Usage
 Crontab
