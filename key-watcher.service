@@ -5,3 +5,6 @@ Description=Button Controller
 # Command to execute when the service is started
 # @see https://github.com/torfsen/python-systemd-tutorial
 ExecStart=/usr/bin/python3.7 /home/pi/e-ink-btc/key-watcher.py
+
+[Install]
+WantedBy=default.target
