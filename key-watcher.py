@@ -57,7 +57,7 @@ GPIO.add_event_detect(key4, GPIO.FALLING, callback=interrupt, bouncetime=200)
 try:
     while True:
         tic = tic + 1
-        print("Tic %d" % tic)
+        # print("Tic %d" % tic)
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()
