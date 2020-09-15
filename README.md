@@ -34,6 +34,7 @@ screen -S e-ink-btc-buttons python3 key-watcher.py
 mkdir -p  ~/.config/systemd/user/
 cp key-watcher.service  ~/.config/systemd/user/
 systemctl --user daemon-reload
+systemctl --user enable key-watcher
 systemctl --user start key-watcher
 sudo loginctl enable-linger $USER
 ```
